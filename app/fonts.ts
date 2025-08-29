@@ -4,10 +4,12 @@ export const workSans = Work_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"], // Regular, Medium, SemiBold, Bold
   variable: "--font-work-sans",
+  display: "swap",
 });
 
 export const eczar = Eczar({
   subsets: ["latin"],
   weight: ["600"], // SemiBold
   variable: "--font-eczar",
+  display: "swap",
 });

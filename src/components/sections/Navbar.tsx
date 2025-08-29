@@ -29,6 +29,7 @@ export default function Navbar() {
     <>
       <AppBar
         position="static"
+        elevation={0}
         sx={{
           bgcolor: theme.custom.colors.secondary.Isabelline,
           boxShadow: "none",
@@ -74,8 +75,8 @@ export default function Navbar() {
           <IconButton
             edge="end"
             sx={{
-              display: { xs: "flex", md: "none" }, // hanya muncul di mobile
-              ml: "auto", // dorong ke kanan
+              display: { xs: "flex", md: "none" },
+              ml: "auto",
               color: theme.custom.colors.neutral.Chinese_Black,
             }}
             onClick={() => setOpen(true)}

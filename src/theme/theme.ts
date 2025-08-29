@@ -18,7 +18,7 @@ declare module "@mui/material/styles" {
   interface TypographyVariantsOptions {
     workSemi32?: React.CSSProperties;
     workSemi24?: React.CSSProperties;
-    workSemi20: React.CSSProperties;
+    workSemi20?: React.CSSProperties;
     workMedium24?: React.CSSProperties;
     workBold20?: React.CSSProperties;
     workMedium20?: React.CSSProperties;
