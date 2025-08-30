@@ -48,7 +48,7 @@ const SecondarySection = () => {
               variant="workMedium20"
               color={theme.custom.colors.neutral.Chinese_Black}
             >
-              Some of my favorite testimonials from my clients
+              Reflections from My Projects
             </Typography>
           </Box>
           <Box
