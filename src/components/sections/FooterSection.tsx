@@ -3,6 +3,7 @@
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 
 const FooterSection = () => {
   const theme = useTheme();
@@ -87,6 +88,14 @@ const FooterSection = () => {
             </IconButton>
             <IconButton>
               <GitHubIcon
+                sx={{
+                  fontSize: "3rem",
+                  color: theme.custom.colors.primary.Slate_Gray,
+                }}
+              />
+            </IconButton>
+            <IconButton>
+              <PictureAsPdfIcon
                 sx={{
                   fontSize: "3rem",
                   color: theme.custom.colors.primary.Slate_Gray,

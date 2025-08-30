@@ -10,9 +10,13 @@ export default function Home() {
     <>
       <Navbar />
       <HeroSection />
-      <MainSection />
+      <div id="mainSection">
+        <MainSection />
+      </div>
       <SecondarySection />
-      <AboutmeSection />
+      <div id="aboutSection">
+        <AboutmeSection />
+      </div>
       <FooterSection />
     </>
   );

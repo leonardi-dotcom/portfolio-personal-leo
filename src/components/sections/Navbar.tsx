@@ -13,17 +13,36 @@ import {
   ListItemButton,
   ListItemText,
   useTheme,
+  Dialog,
+  DialogContent,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import PetsIcon from "@mui/icons-material/Pets";
 
-const menuItems = ["Home", "Work", "Testimonials", "About"];
+const menuItems = [
+  { label: "View Resume", type: "resume" },
+  { label: "Work", target: "mainSection", type: "scroll" },
+  { label: "About", target: "aboutSection", type: "scroll" },
+];
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-
+  const [openDrawer, setOpenDrawer] = useState(false);
+  const [openResume, setOpenResume] = useState(false); // 🔑 state untuk modal
   const theme = useTheme();
+
+  const handleMenuClick = (item: any) => {
+    if (item.type === "scroll" && item.target) {
+      const section = document.getElementById(item.target);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+    if (item.type === "resume") {
+      setOpenResume(true);
+    }
+    setOpenDrawer(false);
+  };
 
   return (
     <>
@@ -62,16 +81,21 @@ export default function Navbar() {
           >
             {menuItems.map((item) => (
               <Typography
-                key={item}
+                key={item.label}
                 variant="workSemi20"
-                color={theme.custom.colors.neutral.Chinese_Black}
+                sx={{
+                  cursor: "pointer",
+                  color: theme.custom.colors.neutral.Chinese_Black,
+                  "&:hover": { textDecoration: "underline" },
+                }}
+                onClick={() => handleMenuClick(item)}
               >
-                {item}
+                {item.label}
               </Typography>
             ))}
           </Box>
 
-          {/* Hamburger (Mobile Only, Always Right) */}
+          {/* Hamburger */}
           <IconButton
             edge="end"
             sx={{
@@ -79,25 +103,29 @@ export default function Navbar() {
               ml: "auto",
               color: theme.custom.colors.neutral.Chinese_Black,
             }}
-            onClick={() => setOpen(true)}
+            onClick={() => setOpenDrawer(true)}
           >
             <MenuIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
 
-      {/* Drawer Menu Mobile */}
-      <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
+      {/* Drawer Mobile */}
+      <Drawer
+        anchor="right"
+        open={openDrawer}
+        onClose={() => setOpenDrawer(false)}
+      >
         <Box sx={{ width: 250, p: 2 }}>
-          <IconButton onClick={() => setOpen(false)} sx={{ mb: 2 }}>
+          <IconButton onClick={() => setOpenDrawer(false)} sx={{ mb: 2 }}>
             <CloseIcon />
           </IconButton>
           <List>
             {menuItems.map((item) => (
-              <ListItem key={item} disablePadding>
-                <ListItemButton onClick={() => setOpen(false)}>
+              <ListItem key={item.label} disablePadding>
+                <ListItemButton onClick={() => handleMenuClick(item)}>
                   <ListItemText
-                    primary={item}
+                    primary={item.label}
                     primaryTypographyProps={{ fontWeight: 500 }}
                   />
                 </ListItemButton>
@@ -106,6 +134,23 @@ export default function Navbar() {
           </List>
         </Box>
       </Drawer>
+
+      {/* 🔑 Modal Resume Preview */}
+      <Dialog
+        open={openResume}
+        onClose={() => setOpenResume(false)}
+        maxWidth="lg"
+        fullWidth
+      >
+        <DialogContent sx={{ height: "80vh", p: 0 }}>
+          <iframe
+            src="/pdf/Resume.pdf"
+            width="100%"
+            height="100%"
+            style={{ border: "none" }}
+          />
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
