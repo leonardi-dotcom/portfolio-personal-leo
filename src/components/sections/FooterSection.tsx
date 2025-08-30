@@ -54,6 +54,10 @@ const FooterSection = () => {
               }}
             >
               <Button
+                component="a"
+                href="https://www.linkedin.com/in/muhamad-leonardi-a16042252/"
+                target="_blank"
+                rel="noopener noreferrer"
                 sx={{
                   width: "16.875rem",
                   p: "1rem",
@@ -78,7 +82,12 @@ const FooterSection = () => {
               alignItems: "flex-end",
             }}
           >
-            <IconButton>
+            <IconButton
+              component="a"
+              href="https://www.linkedin.com/in/muhamad-leonardi-a16042252/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <LinkedInIcon
                 sx={{
                   fontSize: "3rem",
@@ -86,7 +95,12 @@ const FooterSection = () => {
                 }}
               />
             </IconButton>
-            <IconButton>
+            <IconButton
+              component="a"
+              href="https://github.com/leonardi-dotcom"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <GitHubIcon
                 sx={{
                   fontSize: "3rem",
@@ -94,7 +108,10 @@ const FooterSection = () => {
                 }}
               />
             </IconButton>
-            <IconButton>
+            <IconButton
+              href="/pdf/Resume.pdf"
+              download="Resume_MuhamadLeonardi.pdf"
+            >
               <PictureAsPdfIcon
                 sx={{
                   fontSize: "3rem",

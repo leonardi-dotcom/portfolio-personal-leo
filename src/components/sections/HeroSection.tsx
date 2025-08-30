@@ -75,6 +75,10 @@ const HeroSection = () => {
               }}
             >
               <Button
+                component="a"
+                href="https://github.com/leonardi-dotcom"
+                target="_blank"
+                rel="noopener noreferrer"
                 sx={{
                   width: "16.875rem",
                   bgcolor: theme.custom.colors.primary.Glaucous,
@@ -98,6 +102,10 @@ const HeroSection = () => {
                 />
               </Button>
               <Button
+                component="a"
+                href="https://www.linkedin.com/in/muhamad-leonardi-a16042252/"
+                target="_blank"
+                rel="noopener noreferrer"
                 sx={{
                   width: "16.875rem",
                   p: "1rem",

@@ -72,6 +72,10 @@ const AboutmeSection = () => {
               }}
             >
               <Button
+                component="a"
+                href="https://www.linkedin.com/in/muhamad-leonardi-a16042252/"
+                target="_blank"
+                rel="noopener noreferrer"
                 sx={{
                   width: "16.875rem",
                   p: "1rem",
