@@ -1,7 +1,8 @@
 "use client";
 
 import { Box, Card, Typography, useTheme } from "@mui/material";
-import RecentWork01 from "@/../public/recentWork01.png";
+import RecentWork01 from "@/../public/recentWork05.png";
+import RecentWork03 from "@/../public/recentWork03.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -121,7 +122,7 @@ const MainSection = () => {
             }}
           >
             <Image
-              src={RecentWork01}
+              src={RecentWork03}
               alt="Sang Saka Merah Putih project image"
               priority
               style={{
