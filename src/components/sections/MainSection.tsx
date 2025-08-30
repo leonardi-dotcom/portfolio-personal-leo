@@ -1,8 +1,8 @@
 "use client";
 
 import { Box, Card, Typography, useTheme } from "@mui/material";
-import RecentWork01 from "@/../public/recentWork05.png";
-import RecentWork03 from "@/../public/recentWork03.png";
+import RecentWork01 from "@/../public/recentWork01.png";
+import RecentWork02 from "@/../public/recentWork02.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -18,6 +18,7 @@ const MainSection = () => {
         display: "flex",
         bgcolor: theme.custom.colors.secondary.Misty_Rose,
         px: { xs: 2, sm: 3, md: 0 },
+        overflow: "hidden",
       }}
     >
       <Box
@@ -122,7 +123,7 @@ const MainSection = () => {
             }}
           >
             <Image
-              src={RecentWork03}
+              src={RecentWork01}
               alt="Sang Saka Merah Putih project image"
               priority
               style={{
@@ -212,7 +213,7 @@ const MainSection = () => {
             }}
           >
             <Image
-              src={RecentWork01}
+              src={RecentWork02}
               alt="Adi Wangsa E-Furniture project image"
               priority
               style={{

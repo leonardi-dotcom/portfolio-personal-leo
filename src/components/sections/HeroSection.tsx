@@ -19,6 +19,7 @@ const HeroSection = () => {
           bgcolor: theme.custom.colors.secondary.Isabelline,
           display: "flex",
           px: { xs: 2, sm: 3, md: 0 },
+          overflow: "hidden",
         }}
       >
         {/* Hero Container */}

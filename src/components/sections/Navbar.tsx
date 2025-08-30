@@ -52,6 +52,7 @@ export default function Navbar() {
         sx={{
           bgcolor: theme.custom.colors.secondary.Isabelline,
           boxShadow: "none",
+          overflow: "hidden",
         }}
       >
         <Toolbar

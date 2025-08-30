@@ -17,6 +17,7 @@ const AboutmeSection = () => {
         alignItems: "center",
         py: { xs: "2.5rem", md: "5rem" },
         px: { xs: "1.25rem", sm: "2rem", md: "4rem" },
+        overflow: "hidden",
       }}
     >
       {/* Aboutme Main Container */}

@@ -19,6 +19,7 @@ const FooterSection = () => {
         alignItems: "center",
         py: { xs: "3rem", md: "5rem" },
         px: { xs: "1rem", sm: "2rem", md: "0" },
+        overflow: "hidden",
       }}
     >
       <Box

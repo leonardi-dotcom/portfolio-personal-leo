@@ -16,6 +16,7 @@ const SecondarySection = () => {
         alignItems: "center",
         py: { xs: "3rem", md: "8rem" },
         px: { xs: "1rem", md: "0" },
+        overflow: "hidden",
       }}
     >
       {/* Title Section */}
