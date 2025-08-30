@@ -3,39 +3,45 @@
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import aboutme from "@/../public/aboutme.png";
 import Image from "next/image";
-import CustomButtonUi from "../ui/CustomButtonUi";
+import { motion } from "framer-motion"; // ⬅️ tambahkan ini
 
 const AboutmeSection = () => {
   const theme = useTheme();
 
   return (
-    <>
+    <Box
+      sx={{
+        width: "100%",
+        height: "auto",
+        bgcolor: theme.custom.colors.secondary.Misty_Rose,
+        display: "flex",
+        px: "1rem",
+      }}
+    >
+      {/* Aboutme Main */}
       <Box
         sx={{
-          width: "100%",
+          width: "70.1875rem",
           height: "auto",
-          bgcolor: theme.custom.colors.secondary.Misty_Rose,
           display: "flex",
-          px: "1rem ",
+          flexDirection: "row",
+          mx: "auto",
+          justifyContent: "space-between",
+          alignItems: "center",
+          py: "5rem",
         }}
       >
-        {/* Aboutme Main */}
-        <Box
-          sx={{
-            width: "70.1875rem",
-            height: "auto",
-            display: "flex",
-            flexDirection: "row",
-            mx: "auto",
-            justifyContent: "space-between",
-          }}
+        {/* LEFT SIDE TEXT */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
               gap: "1rem",
-              mt: "5rem",
             }}
           >
             <Typography
@@ -63,6 +69,7 @@ const AboutmeSection = () => {
               technologies and ecosystems — especially those closer to low-level
               systems.
             </Typography>
+
             <Box
               sx={{
                 display: "flex",
@@ -92,10 +99,18 @@ const AboutmeSection = () => {
               </Button>
             </Box>
           </Box>
+        </motion.div>
+
+        {/* RIGHT SIDE IMAGE */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <Image src={aboutme} alt="aboutme" />
-        </Box>
+        </motion.div>
       </Box>
-    </>
+    </Box>
   );
 };
 
