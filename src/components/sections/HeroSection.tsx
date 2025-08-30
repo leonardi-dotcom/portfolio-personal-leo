@@ -101,7 +101,7 @@ const HeroSection = () => {
                 sx={{
                   width: "16.875rem",
                   p: "1rem",
-                  border: "2px solid #4E5E80",
+                  border: "4px solid #4E5E80",
                   borderRadius: "1.5rem",
                 }}
               >
